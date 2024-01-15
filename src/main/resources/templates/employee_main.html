@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>사원 정보 관리 페이지</h1>
+	<table>
+		<thead>
+			<tr>
+				<td>사원번호</td>
+				<td>사원명</td>
+				<td>부서명</td>
+				<td>직급</td>
+				<td>급여</td>
+				<td>작업</td>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="employee : ${employeeList}">
+			 		<td>[[${employee.eno }]]</td>
+			 		<td>[[${employee.name }]]</td>
+			 		<td>[[${employee.department }]]</td>
+			 		<td>[[${employee.positionNo }]]</td>
+			 		<td>[[${employee.salary }]]</td>
+			 		<td>
+			 			<a th:href='@{/employee/update/{eno}(eno=${emplo.eno })}'>수정</a>
+			 			/
+			 			<a th:href='@{/employee/delete/{eno}(eno=${emplo.eno })}'>삭제</a>
+			 			
+			 		</td>
+			 	</tr>
+		</tbody>
+ 	</tbody>
+		
+ </table>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.emploeey.mapper.EmploeeyMapper">
+	<resultMap type="emploeey" id="emploeey">
+		<id column="ENO" property="eno" />
+		<result column="NAME" property="name" />
+		<result column="DEPARTMENT" property="department" />
+		<result column="POSITION_NO" property="positionNo" />
+		<result column="SALARY" property="salary" />
+	</resultMap>
+
+	<select id="selectAllEmploeey" resultMap="emploeey">
+		select * from emploeey
+	</select>
+
+	<delete id="deleteEmploeey" parameterType="string">
+		delete from emploeey
+		where std_no like #{eno}
+	</delete>
+
+</mapper>
+
+
+
+
+
+
